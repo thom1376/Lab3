@@ -71,4 +71,10 @@ public class CalculatorTest {
         double resultSub = mCalculator.sub(1d, 1d);
         assertThat(resultSub, is(equalTo(0d)));
     }
+
+    @Test
+    public void subWorksWithNegativeResult() {
+        double resultSub = mCalculator.sub(1d, 17d);
+        assertThat(resultSub, is(equalTo(-16d)));
+    }
 }
