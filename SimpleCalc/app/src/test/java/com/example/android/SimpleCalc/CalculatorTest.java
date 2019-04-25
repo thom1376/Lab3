@@ -65,4 +65,10 @@ public class CalculatorTest {
         double resultAdd = mCalculator.add(1.111f, 1.111d);
         assertThat(resultAdd, is(closeTo(2.222, 0.01)));
     }
+
+    @Test
+    public void subTwoNumbers() {
+        double resultSub = mCalculator.sub(1d, 1d);
+        assertThat(resultSub, is(equalTo(0d)));
+    }
 }
