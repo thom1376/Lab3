@@ -77,4 +77,10 @@ public class CalculatorTest {
         double resultSub = mCalculator.sub(1d, 17d);
         assertThat(resultSub, is(equalTo(-16d)));
     }
+
+    @Test
+    public void mulTwoNumbers() {
+        double resultMul = mCalculator.mul(32d, 2d);
+        assertThat(resultMul, is(equalTo(64d)));
+    }
 }
