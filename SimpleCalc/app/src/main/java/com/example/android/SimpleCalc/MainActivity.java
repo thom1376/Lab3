@@ -23,6 +23,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * SimpleCalc is the initial version of SimpleCalcTest.  It has
@@ -112,8 +113,14 @@ public class MainActivity extends Activity {
                         mCalculator.sub(operandOne, operandTwo));
                 break;
             case DIV:
-                result = String.valueOf(
-                        mCalculator.div(operandOne, operandTwo));
+                result = "";
+                try {
+                    result = String.valueOf(
+                            mCalculator.div(operandOne, operandTwo));
+                } catch (IllegalArgumentException e) {
+                    Toast toast = Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT);
+                    toast.show();
+                }
                 break;
             case MUL:
                 result = String.valueOf(
